@@ -1,18 +1,21 @@
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
 const conn = new Sequelize(process.env.DATABASE_URL);
+const conn = new Sequelize(process.env.DATABASE_URL, "prestonchaplin", "", {
+  dialect: "postgres"
+});
 // const conn = new Sequelize(
 //   process.env.DATABASE_URL || 'postgres://localhost/acme_products_categories',
 //   {
 //     logging: false
 //   }
 // );
-const faker = require('faker');
+const faker = require("faker");
 
-const Category = conn.define('category', {
+const Category = conn.define("category", {
   name: Sequelize.STRING
 });
 
-const Product = conn.define('product', {
+const Product = conn.define("product", {
   name: Sequelize.STRING
 });
 
@@ -30,7 +33,7 @@ Category.prototype.createProduct = function() {
   });
 };
 
-const categoryNames = ['Foo', 'Bar', 'Bazz'];
+const categoryNames = ["Foo", "Bar", "Bazz"];
 
 const syncAndSeed = () => {
   return conn.sync({ force: true }).then(async () => {
@@ -38,9 +41,9 @@ const syncAndSeed = () => {
       categoryNames.map(name => Category.create({ name }))
     );
     await Promise.all([
-      Product.create({ name: 'Foo Product', categoryId: Foo.id }),
-      Product.create({ name: 'Bar Product', categoryId: Bar.id }),
-      Product.create({ name: 'Baz Product', categoryId: Baz.id })
+      Product.create({ name: "Foo Product", categoryId: Foo.id }),
+      Product.create({ name: "Bar Product", categoryId: Bar.id }),
+      Product.create({ name: "Baz Product", categoryId: Baz.id })
     ]);
   });
 };

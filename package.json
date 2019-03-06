@@ -1,9 +1,4 @@
 {
-  "editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": false
-  },
   "name": "acme-product-categories",
   "version": "1.0.0",
   "description": "",
@@ -24,13 +19,15 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   },
+  "engines": {
+    "node": "v11.6"
+  },
   "babel": {
     "presets": [
       "react",
       "stage-2"
     ]
   },
-  "devDependencies": {},
   "scripts": {
     "postinstall": "./node_modules/webpack/bin/webpack.js",
     "test": "echo \"Error: no test specified\" && exit 1",
