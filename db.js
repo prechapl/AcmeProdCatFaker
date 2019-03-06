@@ -1,8 +1,13 @@
 const Sequelize = require("sequelize");
 // const conn = new Sequelize(process.env.DATABASE_URL);
-const conn = new Sequelize(process.env.DATABASE_URL, "preston", "", {
-  dialect: "postgres"
-});
+const conn = new Sequelize(
+  process.env.DATABASE_URL,
+  "preston.chaplin@gmail.com",
+  "Stopbath19!",
+  {
+    dialect: "postgres"
+  }
+);
 // const conn = new Sequelize(
 //   process.env.DATABASE_URL || 'postgres://localhost/acme_products_categories',
 //   {
