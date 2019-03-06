@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 // const conn = new Sequelize(process.env.DATABASE_URL);
-const conn = new Sequelize(process.env.DATABASE_URL, "prestonchaplin", "", {
+const conn = new Sequelize(process.env.DATABASE_URL, "", "", {
   dialect: "postgres"
 });
 // const conn = new Sequelize(
