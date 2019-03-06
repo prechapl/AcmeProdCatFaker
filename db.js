@@ -2,12 +2,7 @@ const Sequelize = require("sequelize");
 const conn = new Sequelize(process.env.DATABASE_URL, {
   dialect: "postgres"
 });
-// const conn = new Sequelize(
-//   process.env.DATABASE_URL || 'postgres://localhost/acme_products_categories',
-//   {
-//     logging: false
-//   }
-// );
+
 const faker = require("faker");
 
 const Category = conn.define("category", {
@@ -19,7 +14,6 @@ const Product = conn.define("product", {
 });
 
 Category.hasMany(Product);
-// Product.belongsTo(Category)
 
 Category.createFake = function() {
   return this.create({ name: faker.commerce.department() });
