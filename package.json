@@ -34,7 +34,10 @@
     "start": "node server.js",
     "webpack": "webpack",
     "webpack:dev": "npm run webpack -- --mode=development --watch",
-    "start:dev": "npm run webpack:dev & DATABASE_URL=postgres://localhost/acme_products_categories nodemon server.js --ignore src/ --ignore dist/"
+    "start:dev": "npm run webpack:dev & DATABASE_URL=postgres://localhost/acme_products_categories nodemon server.js --ignore src/ --ignore dist/",
+    "production": {
+      "use_env_variable": "DATABASE_URL"
+    }
   },
   "keywords": [],
   "author": "",
